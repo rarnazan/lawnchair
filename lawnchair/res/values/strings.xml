@@ -1098,4 +1098,9 @@
     <string name="lawnchair_action_failed">Failed to trigger action</string>
 
     <string name="please_wait">Please wait…</string>
+    <string name="customizer_label">Customizer</string>
+    <string name="customizer_presets">Presets</string>
+    <string name="customizer_apply_confirm">Apply \"%1$s\" to theme, icons, widgets, animation and home screen?</string>
+    <string name="customizer_device_check">Device check</string>
+    <string name="customizer_device_check_note">Read from this device. \"unverified\" means the value could not be read, not that it is fine.</string>
 </resources>

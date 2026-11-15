@@ -74,6 +74,7 @@ import app.lawnchair.ui.preferences.data.liveinfo.SyncLiveInformation
 import app.lawnchair.ui.preferences.navigation.About
 import app.lawnchair.ui.preferences.navigation.AppDrawer
 import app.lawnchair.ui.preferences.navigation.BackupAndRestore
+import app.lawnchair.ui.preferences.navigation.Customizer
 import app.lawnchair.ui.preferences.navigation.DebugMenu
 import app.lawnchair.ui.preferences.navigation.Dock
 import app.lawnchair.ui.preferences.navigation.ExperimentalFeatures
@@ -256,7 +257,7 @@ fun RowScope.PreferencesOverflowMenu(
 
     OverflowMenuGrouped(
         modifier = modifier.addIf(
-            listOf(ExperimentalFeatures).any {
+            listOf(ExperimentalFeatures, Customizer).any {
                 currentRoute == it
             },
         ) {
@@ -314,6 +315,22 @@ fun RowScope.PreferencesOverflowMenu(
                 },
                 text = {
                     Text(text = stringResource(id = R.string.experimental_features_label))
+                },
+            )
+            DropdownMenuItem(
+                leadingIcon = {
+                    Icon(
+                        imageVector = Icons.Rounded.Science,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                },
+                onClick = {
+                    onNavigate(Customizer)
+                    hideMenu()
+                },
+                text = {
+                    Text(text = stringResource(id = R.string.customizer_label))
                 },
             )
         }
